@@ -67,7 +67,7 @@ workflows:
       vars:
         XCODE_WORKSPACE: "ios/Runner.xcworkspace" # <-- Put your encrypted Certificate Private Key here
         XCODE_SCHEME: "Runner"
-        BUNDLE_ID: "com.example.firebaseCrash"
+        BUNDLE_ID: "com.example.newCodeSigning"
       flutter: 2.8.1
       xcode: 12.5
       cocoapods: default
@@ -97,7 +97,7 @@ workflows:
           --build-name=1.0.0 \
           --build-number=$(($(app-store-connect get-latest-testflight-build-number "$APP_STORE_ID") + 1)) \
           --export-options-plist=/Users/builder/export_options.plist    
-          git-changelog generate --previous-commit `git rev-list --tags --skip=1  --max-count=1` > CHANGELOG
+#       git-changelog generate --previous-commit `git rev-list --tags --skip=1  --max-count=1` > CHANGELOG
     artifacts: 
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
