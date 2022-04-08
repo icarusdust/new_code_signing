@@ -71,6 +71,9 @@ workflows:
       flutter: 2.8.1
       xcode: 12.5
       cocoapods: default
+    cache:
+       cache_paths:
+           - $FLUTTER_ROOT/.pub-cache      
     scripts:
       - name: Get Flutter Packages
         script: |
